@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chimera", "Chimera\Chimera.csproj", "{5082DEEF-B4DD-4DC3-8316-6624C51D2901}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurfaceItems", "SurfaceItems\SurfaceItems.csproj", "{D79D2433-3457-4DCF-933C-24FE99724C4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ode", "Ode\Ode.csproj", "{FBE887D6-57E0-493D-9B56-678D5FB7E57F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5082DEEF-B4DD-4DC3-8316-6624C51D2901}.Debug|x86.ActiveCfg = Debug|x86
+		{5082DEEF-B4DD-4DC3-8316-6624C51D2901}.Debug|x86.Build.0 = Debug|x86
+		{5082DEEF-B4DD-4DC3-8316-6624C51D2901}.Release|x86.ActiveCfg = Release|x86
+		{5082DEEF-B4DD-4DC3-8316-6624C51D2901}.Release|x86.Build.0 = Release|x86
+		{D79D2433-3457-4DCF-933C-24FE99724C4D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D79D2433-3457-4DCF-933C-24FE99724C4D}.Debug|x86.Build.0 = Debug|Any CPU
+		{D79D2433-3457-4DCF-933C-24FE99724C4D}.Release|x86.ActiveCfg = Release|Any CPU
+		{D79D2433-3457-4DCF-933C-24FE99724C4D}.Release|x86.Build.0 = Release|Any CPU
+		{FBE887D6-57E0-493D-9B56-678D5FB7E57F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FBE887D6-57E0-493D-9B56-678D5FB7E57F}.Debug|x86.Build.0 = Debug|Any CPU
+		{FBE887D6-57E0-493D-9B56-678D5FB7E57F}.Release|x86.ActiveCfg = Release|Any CPU
+		{FBE887D6-57E0-493D-9B56-678D5FB7E57F}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Chimera\Chimera.csproj
+	EndGlobalSection
+EndGlobal

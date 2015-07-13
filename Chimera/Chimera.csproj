@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5082DEEF-B4DD-4DC3-8316-6624C51D2901}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Chimera</RootNamespace>
+    <AssemblyName>Chimera</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <PlatformTarget>x86</PlatformTarget>
+    <Commandlineparameters>gui</Commandlineparameters>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <Package>glib-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <Package>glade-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="Mono.Posix" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="Mono.Cairo" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="libstetic">
+      <HintPath>..\..\..\..\..\..\..\usr\lib\monodevelop\AddIns\MonoDevelop.GtkCore\libstetic.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="gtk-gui\gui.stetic">
+      <LogicalName>gui.stetic</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\CodingCave.png" />
+    <EmbeddedResource Include="..\cc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="gtk-gui\generated.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="gtk-gui\Chimera.MainWindow.cs" />
+    <Compile Include="Integrator.cs" />
+    <Compile Include="gtk-gui\Chimera.AboutDialog.cs" />
+    <Compile Include="Windows\MainWindow.cs" />
+    <Compile Include="Windows\AboutDialog.cs" />
+    <Compile Include="Assembly\ChimeraVersion.cs" />
+    <Compile Include="Windows\MainWindow.Expose.cs" />
+    <Compile Include="Windows\MainWindow.Menu.cs" />
+    <Compile Include="Windows\MainWindow.Modify.cs" />
+    <Compile Include="Ode\AWP.cs" />
+    <Compile Include="Ode\CoupledStuardLandau.cs" />
+    <Compile Include="Ode\OsziOde.cs" />
+    <Compile Include="Assembly\SettingsChimera.cs" />
+    <Compile Include="Misc\Extention.cs" />
+    <Compile Include="Assembly\AwpLoadSaveHandler.cs" />
+    <Compile Include="Assembly\Plotter.cs" />
+    <Compile Include="Windows\OptionsDialog.cs" />
+    <Compile Include="gtk-gui\Chimera.OptionsDialog.cs" />
+    <Compile Include="Misc\Timer.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Ode\" />
+    <Folder Include="Assembly\" />
+    <Folder Include="Windows\" />
+    <Folder Include="Misc\" />
+    <Folder Include="Windows\Surface\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SurfaceItems\SurfaceItems.csproj">
+      <Project>{D79D2433-3457-4DCF-933C-24FE99724C4D}</Project>
+      <Name>SurfaceItems</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ode\Ode.csproj">
+      <Project>{FBE887D6-57E0-493D-9B56-678D5FB7E57F}</Project>
+      <Name>Ode</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

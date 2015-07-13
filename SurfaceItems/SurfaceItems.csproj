@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D79D2433-3457-4DCF-933C-24FE99724C4D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SurfaceItems</RootNamespace>
+    <AssemblyName>SurfaceItems</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="Mono.Posix" />
+    <Reference Include="Mono.Cairo" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Private>False</Private>
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DisplayTypeSurfaceItem.cs" />
+    <Compile Include="MagnitudeSurfaceItem.cs" />
+    <Compile Include="PhasePortraitSurfaceItem.cs" />
+    <Compile Include="PlainSurfaceItem.cs" />
+    <Compile Include="ValueSurfaceItem.cs" />
+    <Compile Include="DisplayMode.cs" />
+    <Compile Include="MouseButton.cs" />
+    <Compile Include="MouseEventArgs.cs" />
+    <Compile Include="ResizeEventArgs.cs" />
+    <Compile Include="OdePointEventArgs.cs" />
+    <Compile Include="DisplayModeEventArgs.cs" />
+    <Compile Include="SurfaceList.cs" />
+    <Compile Include="LabelEventArgs.cs" />
+    <Compile Include="AxisProperties.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\Ode\Ode.csproj">
+      <Project>{FBE887D6-57E0-493D-9B56-678D5FB7E57F}</Project>
+      <Name>Ode</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
